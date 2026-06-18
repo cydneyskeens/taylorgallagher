@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>William Taylor Gallagher | CPR, EMSA & Wilderness Safety Training</title>
+
+  <meta name="description" content="William Taylor Gallagher provides CPR, BLS, CA EMSA childcare provider training, preventive health and safety education, and wilderness first aid training for outdoor and adventure groups." />
+
+  <style>
+    :root {
+      --forest: #1f3324;
+      --sage: #8fa17c;
+      --cream: #f6f1e8;
+      --stone: #ddd6c6;
+      --orange: #d96b27;
+      --dark: #151515;
+      --white: #ffffff;
+      --muted: #666;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      background: var(--forest);
+      color: var(--white);
+      padding: 12px 20px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    nav {
+      background: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--forest);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 0.95rem;
+      color: var(--dark);
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 88vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.58)),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      padding: 80px 8%;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: #ffd3a8;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--forest);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--forest);
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+
+    .section-lead {
+      font-size: 1.1rem;
+      max-width: 780px;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--white);
+      padding: 34px;
+      border-radius: 20px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    }
+
+    .about-card h3 {
+      color: var(--forest);
+      margin-bottom: 14px;
+      font-size: 1.5rem;
+    }
+
+    .photo-card {
+      min-height: 420px;
+      background:
+        linear-gradient(rgba(31,51,36,0.25), rgba(31,51,36,0.25)),
+        url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+    }
+
+    .card h3 {
+      color: var(--forest);
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .badge {
+      background: var(--white);
+      color: var(--forest);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .dark-section {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .dark-section .section-title,
+    .dark-section .section-lead {
+      color: var(--white);
+    }
+
+    .dark-section .card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--white);
+    }
+
+    .dark-section .card h3,
+    .dark-section .card p {
+      color: var(--white);
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .quote {
+      background: var(--white);
+      padding: 26px;
+      border-left: 5px solid var(--orange);
+      border-radius: 14px;
+      font-weight: bold;
+      color: var(--forest);
+    }
+
+    .cta {
+      background:
+        linear-gradient(rgba(31,51,36,0.85), rgba(31,51,36,0.85)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta .section-title {
+      color: var(--white);
+    }
+
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #111;
+      color: var(--white);
+      padding: 34px 8%;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffd3a8;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        text-align: center;
+      }
+
+      .nav-links a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 90px 8%;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="topbar">
+    CPR • BLS • CA EMSA Childcare Training • Wilderness First Aid • Private Group Safety Training
+  </div>
+
+  <nav>
+    <div class="logo">William Taylor Gallagher</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#programs">Courses</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#private">Private Training</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Safety Training That People Actually Remember</div>
+      <h1>Training for the moments that matter.</h1>
+      <p>
+        William Taylor Gallagher provides practical, engaging safety education for childcare providers,
+        healthcare workers, workplaces, parents, travelers, and outdoor adventure groups.
+      </p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#programs">View Training Options</a>
+        <a class="btn btn-secondary" href="https://amerimedcpr.com/" target="_blank" rel="noopener">CPR & BLS</a>
+        <a class="btn btn-outline" href="https://wtaylorgallagher-dot.github.io/wilderness-first-aid/" target="_blank" rel="noopener">Wilderness Training</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="section-inner about-grid">
+      <div>
+        <h2 class="section-title">Meet Taylor</h2>
+        <p class="section-lead">
+          Taylor is a safety instructor with experience teaching CPR, BLS, childcare health and safety,
+          emergency preparedness, and wilderness response concepts.
+        </p>
+
+```
+    <div class="about-card">
+      <h3>Relatable. Practical. Real.</h3>
+      <p>
+        Taylor’s strength is making serious information easy to understand and hard to forget.
+        He adapts his teaching style to the group in front of him — whether that means helping
+        childcare providers stay engaged through a long licensing course, walking healthcare workers
+        through BLS skills, or preparing outdoor groups for emergencies in remote environments.
+      </p>
+      <br />
+      <p>
+        His classes are built around real-world examples, humor, clear expectations, and practical
+        scenarios that help students feel more confident when it counts.
+      </p>
+    </div>
+  </div>
+
+  <div class="photo-card" aria-label="Outdoor training photo"></div>
+</div>
+```
+
+  </section>
+
+  <section id="programs" class="dark-section">
+    <div class="section-inner">
+      <h2 class="section-title">Training Programs</h2>
+      <p class="section-lead">
+        Choose the training path that fits your needs. Taylor’s instruction connects childcare compliance,
+        CPR/BLS certification, and outdoor safety into one trusted training ecosystem.
+      </p>
+
+```
+  <div class="cards">
+    <div class="card">
+      <div>
+        <h3>CA Preventive Health & Safety</h3>
+        <p>
+          EMSA-approved training for California childcare providers, including Preventive Health
+          and Safety, Nutrition, and Lead Poisoning Prevention.
+        </p>
+      </div>
+      <a href="https://www.capreventivehealthandsafety.com/" target="_blank" rel="noopener">Visit CA Preventive Health & Safety →</a>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3>Acute Preventive Health</h3>
+        <p>
+          Additional EMSA childcare provider training options created to expand course access,
+          class availability, and student support.
+        </p>
+      </div>
+      <a href="https://www.acutepreventivehealth.com/" target="_blank" rel="noopener">Visit Acute Preventive Health →</a>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3>CPR & BLS with AmeriMed CPR</h3>
+        <p>
+          CPR and BLS training offered through AmeriMed CPR, a trusted family-connected training
+          company serving students, healthcare workers, and workplaces.
+        </p>
+      </div>
+      <a href="https://amerimedcpr.com/" target="_blank" rel="noopener">Book CPR or BLS Training →</a>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3>Wilderness & Adventure Safety</h3>
+        <p>
+          Wilderness first aid and emergency preparedness training for hikers, surfers, skiers,
+          climbers, paragliders, guides, camps, travel groups, and outdoor communities.
+        </p>
+      </div>
+      <a href="https://wtaylorgallagher-dot.github.io/wilderness-first-aid/" target="_blank" rel="noopener">Explore Wilderness Training →</a>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section id="credentials">
+    <div class="section-inner">
+      <h2 class="section-title">Credentials & Areas of Instruction</h2>
+      <p class="section-lead">
+        Taylor’s training background brings together regulated childcare safety education,
+        CPR/BLS instruction, and practical emergency response training.
+      </p>
+
+```
+  <div class="badges">
+    <div class="badge">CPR Training</div>
+    <div class="badge">BLS Training</div>
+    <div class="badge">CA EMSA Childcare Training</div>
+    <div class="badge">Preventive Health & Safety</div>
+    <div class="badge">Nutrition Training</div>
+    <div class="badge">Lead Poisoning Prevention</div>
+    <div class="badge">Wilderness First Aid</div>
+    <div class="badge">Outdoor Emergency Preparedness</div>
+    <div class="badge">Private Group Training</div>
+    <div class="badge">Remote Travel Safety</div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title">Why Train With Taylor?</h2>
+      <p class="section-lead">
+        Because safety training should not feel like checking a box. It should feel useful, memorable,
+        and directly connected to your life, work, or adventure.
+      </p>
+
+```
+  <div class="quote-grid">
+    <div class="quote">Makes serious topics easier to understand.</div>
+    <div class="quote">Keeps students laughing, listening, and involved.</div>
+    <div class="quote">Adapts examples to the group in the room.</div>
+    <div class="quote">Focuses on real situations, not just textbook answers.</div>
+    <div class="quote">Works with childcare providers, medical learners, and outdoor groups.</div>
+    <div class="quote">Builds confidence before emergencies happen.</div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section id="private" class="cta">
+    <div class="section-inner">
+      <h2 class="section-title">Private Training for Your Group</h2>
+      <p>
+        Need training for a daycare team, workplace, guide service, outdoor club, retreat,
+        travel group, camp, or adventure crew? Taylor can tailor the course experience
+        to your people, your risks, and your setting.
+      </p>
+      <div class="buttons" style="justify-content:center;">
+        <a class="btn btn-primary" href="mailto:info@capreventivehealthandsafety.com?subject=Private%20Training%20Request%20for%20William%20Taylor%20Gallagher">Request Private Training</a>
+        <a class="btn btn-secondary" href="https://wtaylorgallagher-dot.github.io/wilderness-first-aid/" target="_blank" rel="noopener">View Wilderness Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© William Taylor Gallagher | Safety Training & Emergency Preparedness</p>
+    <p>
+      <a href="https://www.capreventivehealthandsafety.com/" target="_blank" rel="noopener">CA Preventive Health & Safety</a>
+      |
+      <a href="https://www.acutepreventivehealth.com/" target="_blank" rel="noopener">Acute Preventive Health</a>
+      |
+      <a href="https://amerimedcpr.com/" target="_blank" rel="noopener">AmeriMed CPR</a>
+      |
+      <a href="https://wtaylorgallagher-dot.github.io/wilderness-first-aid/" target="_blank" rel="noopener">Wilderness First Aid</a>
+    </p>
+  </footer>
+
+</body>
+</html>
